@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import { CircularProgress } from '@mui/material';
-import React = require('react');
+import * as React from 'react';
 
-const HomePage = React.lazy(() => import('../src/pages/HomePage'));
+const HomePage = React.lazy(() => import('./pages/Homepage'));
 
 const AppRouter = () => {
   return (
