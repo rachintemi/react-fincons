@@ -1,12 +1,42 @@
+import { useEffect, useState } from 'react';
 import * as React from 'react';
-import useFetch from '../hook/useHook';
+
+export interface People {
+  UserName: string;
+  FirstName: string;
+  LastName: string;
+}
 
 const HomePage = () => {
-  const { data, loading, error } = useFetch(
-    'https://services.odata.org/TripPinRESTierService/(S(hespbvdrrmhquk5vqlzcpbro))/People'
-  );
+  const [people, setPeople] = useState<People[]>([]);
 
-  return <div> </div>;
+  const fetchData = (url: string) => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setPeople(data.value))
+      .catch((error) => console.log(error));
+  };
+
+  /*   const fetchInfo = () => {
+    return axios.get(url).then((res) => setData(res.data));
+  }; */
+  /*   const fetchData = async (url) => {
+    const { data } = await axios.get(url
+    );
+    setData(data);
+  }; */
+
+  useEffect(() => {
+    fetchData(
+      'https://services.odata.org/TripPinRESTierService/(S(hespbvdrrmhquk5vqlzcpbro))/People'
+    );
+  }, []);
+
+  const listPeople = people.map((person) => (
+    <li key={person.UserName}>{`${person.FirstName} ${person.LastName}`}</li>
+  ));
+
+  return <div>{people && <ul>{listPeople}</ul>}</div>;
 };
 
 export default HomePage;

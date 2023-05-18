@@ -3,17 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@syncfusion/ej2-react-grids": "^21.2.5",
-    "@types/react": "^18.2.6",
-    "@types/react-dom": "^18.2.4",
-    "axios": "^1.4.0",
-    "events": "^3.3.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-native": "^0.71.8",
+    "@syncfusion/ej2-react-grids": "^21.2.4",
+    "@types/react": "^18.0.8",
+    "@types/react-dom": "^18.0.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "react-router-dom": "^6.11.1",
-    "sass": "^1.62.1",
-    "zlib": "^1.0.5"
+    "sass": "^1.62.1"
   },
   "scripts": {
     "start": "react-scripts start",
