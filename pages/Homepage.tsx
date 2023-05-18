@@ -17,15 +17,6 @@ const HomePage = () => {
       .catch((error) => console.log(error));
   };
 
-  /*   const fetchInfo = () => {
-    return axios.get(url).then((res) => setData(res.data));
-  }; */
-  /*   const fetchData = async (url) => {
-    const { data } = await axios.get(url
-    );
-    setData(data);
-  }; */
-
   useEffect(() => {
     fetchData(
       'https://services.odata.org/TripPinRESTierService/(S(hespbvdrrmhquk5vqlzcpbro))/People'
